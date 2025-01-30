@@ -1,6 +1,6 @@
 import React from 'react';
 import {SafeAreaView, Dimensions} from 'react-native';
-import {YStack, SizableText} from 'tamagui';
+import {YStack, SizableText, Image, View} from 'tamagui';
 import {LineChart} from 'react-native-gifted-charts';
 
 import {useAppSelector} from 'app/store/hooks';
@@ -23,9 +23,10 @@ const Stats: React.FC = () => {
 
   return (
     <YStack bg="#418F75" f={1}>
+        <Image source={require('../../assets/images/bg.png')} style={{flex:1, width:'100%', height:'100%', position:'absolute'}} />
       <SafeAreaView>
         <YStack px={20} mt={20} mb={10}>
-          <SizableText mb={26} fos={20}>
+          <SizableText mb={26} fos={20} col={'#fff'}>
             Statistics:
           </SizableText>
 

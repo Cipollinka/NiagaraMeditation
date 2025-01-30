@@ -10,6 +10,8 @@ import {navigate} from 'app/navigationRef';
 const Home: React.FC = () => {
   return (
     <YStack bg="#418F75" f={1}>
+      <Image source={require('../../assets/images/bg.png')} style={{flex:1, width:'100%', height:'100%', position:'absolute'}} />
+      {/*<View style={{position:'absolute', flex: 1, width: '100%', height:'100%', backgroundColor: '#fff', opacity:'0.5'}} />*/}
       <SafeAreaView>
         <XStack jc="space-between" ai="center" gap={20} px={20}>
           <View
@@ -60,7 +62,7 @@ const Home: React.FC = () => {
             data={data}
             showsVerticalScrollIndicator={false}
             ListHeaderComponent={
-              <SizableText mb={10} fos={20}>
+              <SizableText mb={10} fos={20} col={'#fff'}>
                 Recommended:
               </SizableText>
             }

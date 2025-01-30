@@ -1,6 +1,6 @@
 import React from 'react';
 import {SafeAreaView, TouchableOpacity} from 'react-native';
-import {XStack, View, YStack, Input, SizableText, Button} from 'tamagui';
+import {XStack, View, YStack, Input, SizableText, Button, Image} from 'tamagui';
 
 import {setUserInfo} from 'app/store/coreReducer';
 import {useAppDispatch, useAppSelector} from 'app/store/hooks';
@@ -20,6 +20,8 @@ const ProfileScreen: React.FC = () => {
 
   return (
     <YStack bg="#418F75" f={1}>
+      <Image source={require('../../assets/images/bg.png')} style={{flex:1, width:'100%', height:'100%', position:'absolute'}} />
+      {/*<View style={{position:'absolute', flex: 1, width: '100%', height:'100%', backgroundColor: '#fff', opacity:'0.5'}} />*/}
       <SafeAreaView>
         <YStack py={10} gap={20}>
           <YStack jc="center" ai="center" gap={10}>
@@ -71,7 +73,7 @@ const ProfileScreen: React.FC = () => {
               </YStack>
             ) : (
               <YStack>
-                <SizableText ta="center" fos={22} lh={26} fow={400}>
+                <SizableText ta="center" fos={22} lh={26} fow={400} col={'#fff'}>
                   {userInfo?.name}
                 </SizableText>
 
@@ -80,7 +82,7 @@ const ProfileScreen: React.FC = () => {
                     setIsEditMode(true);
                     setName(userInfo?.name ?? '');
                   }}>
-                  <SizableText mt={6} fos={14} lh={16} fow={400}>
+                  <SizableText mt={6} fos={14} lh={16} fow={400} color="#fff">
                     change nickname
                   </SizableText>
                 </TouchableOpacity>

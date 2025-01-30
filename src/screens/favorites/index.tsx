@@ -18,6 +18,8 @@ const Favorites: React.FC = () => {
 
   return (
     <YStack bg="#418F75" f={1}>
+      <Image source={require('../../assets/images/bg.png')} style={{flex:1, width:'100%', height:'100%', position:'absolute'}} />
+      {/*<View style={{position:'absolute', flex: 1, width: '100%', height:'100%', backgroundColor: '#fff', opacity:'0.5'}} />*/}
       <SafeAreaView>
         <XStack jc="space-between" ai="center" gap={20} px={20}>
           <View
@@ -60,7 +62,7 @@ const Favorites: React.FC = () => {
             data={filteredData}
             ListHeaderComponent={
               filteredData.length > 0 ? (
-                <SizableText mb={10} fos={20}>
+                <SizableText mb={10} fos={20} col={'#fff'}>
                   Saved:
                 </SizableText>
               ) : null
@@ -82,7 +84,7 @@ const Favorites: React.FC = () => {
             }
             ListEmptyComponent={
               <XStack w="100%" mt={10} mb={20} px={20}>
-                <SizableText fos={16} ta="center" f={2} lh={20} mb={10}>
+                <SizableText fos={16} ta="center" f={2} lh={20} mb={10} col={'#fff'}>
                   You haven't favorited any meditations yet
                 </SizableText>
               </XStack>
